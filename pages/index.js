@@ -2,6 +2,8 @@ import Container from '../components/container'
 import MoreStories from '../components/more-stories'
 import HeroPost from '../components/hero-post'
 import Intro from '../components/intro'
+import Header from '../components/Header'
+import Hero from '../components/Hero'
 import Layout from '../components/layout'
 import { getAllPostsForHome } from '../lib/api'
 import Head from 'next/head'
@@ -14,10 +16,11 @@ export default function Index({ allPosts, preview }) {
     <>
       <Layout preview={preview}>
         <Head>
-          <title>Next.js Blog Example with {CMS_NAME}</title>
+          <title>Ungard Digital</title>
         </Head>
-        <Container>
-          <Intro />
+        <Header />
+        <Container className="container mx-auto px-5 w-9/12 max-w-screen-xl">
+          <Hero />
           {heroPost && (
             <HeroPost
               title={heroPost.title}
