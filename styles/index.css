@@ -1,3 +1,4 @@
+@import './tokens.css';
 /* purgecss start ignore */
 @tailwind base;
 @tailwind components;
@@ -6,5 +7,42 @@ article a {
     text-decoration: underline;
 }
 /* purgecss end ignore */
+.ungard-blue-underline {
+    text-decoration-color: #5B60C9;
+}
+
+.button-sm { 
+    background-color: var(--ungard-blue);
+    color: var(--text-light);
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 1rem;
+}
+
+.button-base {
+    background-color: var(--ungard-blue);
+    color: var(--text-light);
+    padding: 10px;
+    border-radius: 3px;
+    font-size: 0.875rem;
+}
+
+.button-lg {
+    background-color: var(--ungard-blue);
+    color: var(--text-light);
+    padding: 10px 20px;
+    border-radius: 3px;
+    font-size: 1.75rem;
+}
+
+.button {
+    transition: .25s background-color;
+}
+
+.button:hover {
+    background-color: var(--avenue-blue);
+}
+
+
 @tailwind utilities;
 

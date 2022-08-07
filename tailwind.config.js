@@ -9,15 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors: {
-        colors
-      },
-      spacing: {
-        spacing
-      },
-      fontSize: {
-        fontSize
-      },
+      colors: colors.colors,
+      spacing: spacing.spacing,
+      fontSize: fontSize.fontSize,
     },
-  },
+  }
 };

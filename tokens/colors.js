@@ -7,5 +7,6 @@ exports.colors = {
     "avenue-blue": "#5B60C9",
     "ungard-blue": "#4347A7",
     moonbeam: "#292B4D",
-    "high yellow": "#F9F871"
+    "high yellow": "#F9F871",
+    "primary": "#1A2027"
 }
