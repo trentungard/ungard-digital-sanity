@@ -19,7 +19,7 @@ export default function Index({ allPosts, preview }) {
           <title>Ungard Digital</title>
         </Head>
         <Header />
-        <Container className="container mx-auto px-5 w-9/12 max-w-screen-xl">
+        
           <Hero />
           {heroPost && (
             <HeroPost
@@ -32,7 +32,7 @@ export default function Index({ allPosts, preview }) {
             />
           )}
           {morePosts.length > 0 && <MoreStories posts={morePosts} />}
-        </Container>
+        
       </Layout>
     </>
   )

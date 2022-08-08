@@ -9,6 +9,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        'hero-img': "url(../public/hero-img.jpg)"
+      },
       colors: colors.colors,
       spacing: spacing.spacing,
       fontSize: fontSize.fontSize,
