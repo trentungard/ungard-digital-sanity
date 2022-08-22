@@ -10,22 +10,31 @@ export default function PostPreview({
   excerpt,
   author,
   slug,
+  order
 }) {
-  return (
-    <div>
-      <div className="mb-5">
-        <CoverImage slug={slug} title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
+  return order === 0 ? (
+    <Link as={`/posts/${slug}`} href="/posts/[slug]">
+      <div className='relative flex items-center justify-center row-span-2'>
+        <div className='bg-moonbeam/70 w-full h-full absolute' />
+        <CoverImage title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
+        <div className='absolute top-0 bottom-0 m-auto text-white flex flex-col items-center justify-center'>
+          <span className='text-center'>{title}</span>
+          <Date dateString={date} />
+          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+        </div>
       </div>
-      <h3 className="text-3xl mb-3 leading-snug">
-        <Link as={`/posts/${slug}`} href="/posts/[slug]">
-          <a className="hover:underline">{title}</a>
-        </Link>
-      </h3>
-      <div className="text-lg mb-4">
-        <Date dateString={date} />
+    </Link>
+  ) : (
+    <Link as={`/posts/${slug}`} href="/posts/[slug]">
+      <div className='relative flex items-center justify-center'>
+        <div className='bg-moonbeam/70 w-full h-full absolute' />
+        <CoverImage title={title} imageObject={coverImage} url={imageBuilder(coverImage).url()} />
+        <div className='absolute top-0 bottom-0 m-auto text-white flex flex-col items-center justify-center'>
+          <span className='text-center'>{title}</span>
+          <Date dateString={date} />
+          <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
+        </div>
       </div>
-      <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-      <Avatar name={author?.name} picture={author?.picture} />
-    </div>
+    </Link>
   )
 }
