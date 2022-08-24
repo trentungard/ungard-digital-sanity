@@ -2,7 +2,6 @@ import Avatar from '../components/avatar'
 import Date from '../components/date'
 import CoverImage from '../components/cover-image'
 import Link from 'next/link'
-import { ContentContainer } from "./ContentContainer";
 
 export default function HeroPost({
   title,
