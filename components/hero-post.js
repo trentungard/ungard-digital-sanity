@@ -13,7 +13,7 @@ export default function HeroPost({
   slug,
 }) {
   return (
-    <ContentContainer>
+    <div className='my-5 p-10 bg-kinda-white'>
         <div className="mb-8 md:mb-16">
           <CoverImage slug={slug} imageObject={coverImage} title={title} url={coverImage} />
         </div>
@@ -33,6 +33,6 @@ export default function HeroPost({
             <Avatar name={author?.name} picture={author?.picture} />
           </div>
         </div>
-    </ContentContainer>
+    </div>
   )
 }

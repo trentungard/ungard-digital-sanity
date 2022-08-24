@@ -10,12 +10,16 @@ import Head from 'next/head'
 import { CMS_NAME } from '../lib/constants'
 import { ContentContainer } from '../components/ContentContainer'
 import ungardDigitalOne from '../public/ungard-digital-one.png'
+import { MaintenanceMode } from '../components/MaintenanceMode'
 
 export default function Index({ allPosts, preview }) {
   const heroPost = allPosts[0]
   const morePosts = [allPosts[1], allPosts[2], allPosts[3]]
+  const isMaintenanceMode = true;
 
-  return (
+  return isMaintenanceMode ? (
+    <MaintenanceMode />
+  ) : (
     <>
       <Layout preview={preview}>
         <Head>
@@ -56,8 +60,7 @@ export default function Index({ allPosts, preview }) {
         </section>
         <section className='py-20'>
           <ContentContainer>
-            <p>Looking for information to help your business establish it's digital presence? Look no further! Browser our catalog of articles intended to provide you with the info you need to get your business online.</p>
-            <h2>Featured Articles</h2>
+            <p className='text-xl'>Looking for information to help your business establish it's digital presence? Look no further! Browser our catalog of articles intended to provide you with the info you need to get your business online.</p>
             {heroPost && (
                 <HeroPost
                   title={heroPost.title}
