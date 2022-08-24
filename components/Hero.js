@@ -1,5 +1,5 @@
-import { DecorativeBlob } from "./DecorativeBlob"
-import { ContentContainer } from "./ContentContainer";
+import { DecorativeBlob } from "./decorative-blob"
+import { ContentContainer } from "./content-container";
 import ArrowRight from "./icons/ArrowRight"
 
 export default function Hero() {
