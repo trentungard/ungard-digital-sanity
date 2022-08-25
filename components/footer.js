@@ -1,30 +1,36 @@
-import Container from './container'
+import { ContentContainer } from './content-container'
+import Logo from './logo'
 import { EXAMPLE_PATH } from '../lib/constants'
+import logoBlue from '../public/LogoBlue.svg'
 
 export default function Footer() {
   return (
-    <footer className="bg-accent-1 border-t border-accent-2">
-      <Container>
-        <div className="py-28 flex flex-col lg:flex-row items-center">
-          <h3 className="text-4xl lg:text-5xl font-bold tracking-tighter leading-tight text-center lg:text-left mb-10 lg:mb-0 lg:pr-4 lg:w-1/2">
-            Statically Generated with Next.js.
-          </h3>
-          <div className="flex flex-col lg:flex-row justify-center items-center lg:pl-4 lg:w-1/2">
-            <a
-              href="https://nextjs.org/docs/basic-features/pages"
-              className="mx-3 bg-black hover:bg-white hover:text-black border border-black text-white font-bold py-3 px-12 lg:px-8 duration-200 transition-colors mb-6 lg:mb-0"
-            >
-              Read Documentation
-            </a>
-            <a
-              href={`https://github.com/vercel/next.js/tree/canary/examples/${EXAMPLE_PATH}`}
-              className="mx-3 font-bold hover:underline"
-            >
-              View on GitHub
-            </a>
+    <footer className="bg-moonbeam text-kinda-white">
+      <ContentContainer className='flex justify-between items-center'>
+        <div className="py-28 items-center">
+          <div className='flex items-center'>
+            <img src={logoBlue.src} width='150px' />
+            <h3 className='text-6xl m-5'>Ungard Digital</h3>
           </div>
+          <p className='text-4xl font-light w-3/4 my-5'>Bringing the power of technology to your business.</p>
         </div>
-      </Container>
+        <div>
+          <h4 className='text-lg'>Company</h4>
+          <ul className='font-light'>
+            <li className='my-2'>About</li>
+            <li className='my-2'>Contact</li>
+            <li className='my-2'>News</li>
+          </ul>
+        </div>
+        <div>
+          <h4 className='text-lg'>Other</h4>
+          <ul className='font-light'>
+            <li className='my-2'>Terms and Conditions</li>
+            <li className='my-2'>Privacy Policy</li>
+            <li className='my-2'>Customer Disclaimer</li>
+          </ul>
+        </div>
+      </ContentContainer>
     </footer>
   )
 }

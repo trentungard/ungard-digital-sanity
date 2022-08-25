@@ -1,4 +1,4 @@
-export default function Logo({props}){
+export default function Logo(props){
     return (
         <svg width={68} height={50} fill="none" {...props}>
             <path fill="#292B4D" d="M0 0h68v50H0z" />

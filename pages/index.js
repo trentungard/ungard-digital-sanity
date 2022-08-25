@@ -11,11 +11,12 @@ import { CMS_NAME } from '../lib/constants'
 import { ContentContainer } from '../components/content-container'
 import ungardDigitalOne from '../public/ungard-digital-one.png'
 import { MaintenanceMode } from '../components/maintenance-mode'
+import ArrowRight from "../components/icons/ArrowRight";
 
 export default function Index({ allPosts, preview }) {
   const heroPost = allPosts[0]
   const morePosts = [allPosts[1], allPosts[2], allPosts[3]]
-  const isMaintenanceMode = true;
+  const isMaintenanceMode = process.env.IS_MAINTENANCE_MODE === 1;
 
   return isMaintenanceMode ? (
     <MaintenanceMode />
@@ -58,9 +59,8 @@ export default function Index({ allPosts, preview }) {
             </div>
           </ContentContainer>
         </section>
-        <section className='py-20'>
-          <ContentContainer>
-            <p className='text-xl'>Looking for information to help your business establish it's digital presence? Look no further! Browser our catalog of articles intended to provide you with the info you need to get your business online.</p>
+        <section className='py-20 bg-kinda-white'>
+          <ContentContainer className='flex flex-col gap-5'>
             {heroPost && (
                 <HeroPost
                   title={heroPost.title}
@@ -71,14 +71,17 @@ export default function Index({ allPosts, preview }) {
                   excerpt={heroPost.excerpt}
                 />
             )}
-            <div className='grid grid-rows-2 grid-cols-2 gap-5 max-h-[500px]'>
+            <div className='grid grid-rows-3 lg:grid-rows-2 grid-cols-1 lg:grid-cols-2  gap-5 lg:max-h-[500px] pb-5 auto-rows-max'>
               {morePosts && (
                 <MoreStories 
                   posts={morePosts}
                 />
               )}
             </div>
-            <button>View All Articles</button>
+            <a className='text-xl m-auto p-4 flex gap-2 items-center hover:cursor-pointer hover:text-gray-500'>
+              View All Articles
+              <ArrowRight width={20} />
+            </a>
           </ContentContainer>
         </section>
       </Layout>

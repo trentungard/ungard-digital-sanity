@@ -1,6 +1,7 @@
 import { DecorativeBlob } from "./decorative-blob"
 import { ContentContainer } from "./content-container";
 import ArrowRight from "./icons/ArrowRight"
+import blobOne from '../public/blob-one.svg';
 
 export default function Hero() {
     return(
@@ -16,7 +17,7 @@ export default function Hero() {
                         </button>
                     </div>
                     <div className="hidden xl:block">
-                        <DecorativeBlob />
+                        <img src={blobOne.src} width='1000px' />
                     </div>
                 </div>
             </ContentContainer>
