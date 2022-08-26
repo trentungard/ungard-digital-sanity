@@ -17,6 +17,7 @@ export default function Index({ allPosts, preview }) {
   const heroPost = allPosts[0]
   const morePosts = [allPosts[1], allPosts[2], allPosts[3]]
   const isMaintenanceMode = process.env.IS_MAINTENANCE_MODE === 1;
+  console.log('is maint', process.env.IS_MAINTENANCE_MODE === 1)
 
   return isMaintenanceMode ? (
     <MaintenanceMode />
