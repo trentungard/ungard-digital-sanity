@@ -11,6 +11,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         'hero-img': "url(../public/hero-img.jpg)",
+        'articles-headline': 'url(../public/articles-headline.jpg)'
       },
       colors: colors.colors,
       spacing: spacing.spacing,
