@@ -5,7 +5,7 @@ import Footer from '../components/footer';
 
 export default function Services(){
     const title = 'Our Services';
-    const description = 'We offer a variety of services that fit the needs of many businesses, big or small.'
+    const description = 'We offer a variety of services that fit the needs of many businesses, big or small.';
 
     return (
         <>
