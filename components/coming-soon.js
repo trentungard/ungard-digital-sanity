@@ -19,7 +19,7 @@ export const ComingSoon = () => {
                     <a className='underline mx-2' href="mailto:trent@ungarddigital.com">trent@ungarddigital.com</a> <br/>
                     or give use a call at <a className='underline mx-2' href="tel:15705607532">(570)560-7532</a>
                 </p>
-                <div className='animate-pulse animate-spin'>
+                <div className='animate-pulse'>
                     <img className='mx-auto my-5 w-44 xl:w-80' src={whiteLogo.src} />
                 </div>
             </div>
