@@ -5,7 +5,7 @@ import Header from '../components/header';
 import Footer from '../components/footer';
 
 export default function Articles({allPosts}){
-
+    console.log('all posts', allPosts);
     return (
         <>
             <Header />
@@ -18,7 +18,7 @@ export default function Articles({allPosts}){
             <ContentContainer className='py-20'>
                 <div>
                     <div className='flex flex-wrap justify-around gap-5'>
-                        { allPosts.map((post, i) => <Post className="max-w-lg grow cursor-pointer bg-gray-100 p-5 my-3 h-fit" author={post.author.name} excerpt={post.excerpt} imgSrc={post.coverImage} title={post.title} key={i} />)}
+                        { allPosts.map((post, i) => <Post className="max-w-lg grow cursor-pointer bg-gray-100 p-5 my-3 h-fit" author={post.author? post.author.name : 'Undefined'} excerpt={post.excerpt} imgSrc={post.coverImage} title={post.title} key={i} />)}
                     </div>
                 </div>
             </ContentContainer>
