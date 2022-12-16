@@ -15,7 +15,7 @@ export const ComingSoon = () => {
                     </ul>
                 </div>
                 <p className='text-lg xl:text-2xl p-5'>
-                    Have an urgent matter? Feel free to send an email to 
+                    Have an urgent matter? Feel free to send an email to
                     <a className='underline mx-2' href="mailto:trent@ungarddigital.com">trent@ungarddigital.com</a> <br/>
                     or give use a call at <a className='underline mx-2' href="tel:15705607532">(570)560-7532</a>
                 </p>
