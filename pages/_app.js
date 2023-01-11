@@ -9,27 +9,27 @@ function MyApp({ Component, pageProps }) {
 
   const isMaintenanceMode = process.env.NEXT_PUBLIC_IS_MAINTENANCE_MODE === 1;
 
-  return(
-    <ComingSoon />
-  )
-
-  // return canBypass ? (
-  //   <>
-  //     <Head>
-  //       <link rel="icon" href="/favicon.ico" />
-  //     </Head>
-  //     <Component {...pageProps} />
-  //   </>
-  // ) : isMaintenanceMode ? (
-  //   <MaintenanceMode setCanBypass={setCanBypass}/>
-  // ) : (
-  //   <>
-  //     <Head>
-  //       <link rel="icon" href="/favicon.ico" />
-  //     </Head>
-  //     <Component {...pageProps} />
-  //   </>
+  // return(
+  //   <ComingSoon />
   // )
+
+  return canBypass ? (
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  ) : isMaintenanceMode ? (
+    <MaintenanceMode setCanBypass={setCanBypass}/>
+  ) : (
+    <>
+      <Head>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Component {...pageProps} />
+    </>
+  )
 }
 
 export default MyApp;
