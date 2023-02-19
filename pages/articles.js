@@ -9,7 +9,6 @@ export default function Articles({allPosts}){
     const title = 'Articles';
     const description = 'Looking for tips and tricks to help your business establish or grow its digital presence? Look no further! Browse our catalog of articles intended to help you bring the power of technology to your business';
 
-    console.log('all posts', allPosts);
     return (
         <>
             <Header />

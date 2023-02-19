@@ -67,10 +67,8 @@ export async function getStaticProps({ params, preview = false }) {
   }
 }
 
-export async function getStaticPaths({slug}) {
+export async function getStaticPaths() {
   const allPosts = await getAllPostsWithSlug();
-  console.log('all posts', allPosts)
-  allPosts?.map((post) => console.log(post.slug));
   return {
     paths:
       allPosts?.map((post) => ({

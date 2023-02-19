@@ -10,6 +10,7 @@ export const ContactForm = () => {
       const [inputs, setInputs] = useState({
         email: '',
         message: '',
+        number: ''
       });
       const handleServerResponse = (ok, msg) => {
         if (ok) {
@@ -21,6 +22,7 @@ export const ContactForm = () => {
           setInputs({
             email: '',
             message: '',
+            number: ''
           });
         } else {
           setStatus({
@@ -59,26 +61,36 @@ export const ContactForm = () => {
           });
       };
     return (
-        <main>
-            <h1>React and Formspree</h1>
-            <hr />
-            <form onSubmit={handleOnSubmit}>
-                <label htmlFor="email">Email</label>
+        <div className='w-full flex flex-col items-center'>
+            <h3>Get In Touch</h3>
+            <form className='flex flex-col p-3 max-w-sm w-full border-2 rounded' onSubmit={handleOnSubmit}>
+                <label htmlFor="email">Email (required)</label>
                 <input
-                id="email"
-                type="email"
-                name="_replyto"
-                onChange={handleOnChange}
-                required
-                value={inputs.email}
+                  className='border-2 rounded'
+                  id="email"
+                  type="email"
+                  name="_replyto"
+                  onChange={handleOnChange}
+                  required
+                  value={inputs.email}
                 />
-                <label htmlFor="message">Message</label>
+                <label htmlFor="phone">Phone Number</label>
+                <input
+                  className='border-2 rounded'
+                  id="number"
+                  type="phone"
+                  name="phone"
+                  onChange={handleOnChange}
+                  value={inputs.number}
+                />
+                <label htmlFor="message">Message (required)</label>
                 <textarea
-                id="message"
-                name="message"
-                onChange={handleOnChange}
-                required
-                value={inputs.message}
+                  className='border-2 rounded'
+                  id="message"
+                  name="message"
+                  onChange={handleOnChange}
+                  required
+                  value={inputs.message}
                 />
                 <button type="submit" disabled={status.submitting}>
                 {!status.submitting
@@ -92,6 +104,6 @@ export const ContactForm = () => {
                 <div className="error">Error: {status.info.msg}</div>
             )}
             {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
-        </main>
+        </div>
     )
 }
