@@ -3,18 +3,16 @@ import { Post } from '../components/post';
 import { ContentContainer } from '../components/content-container';
 import Header from '../components/header';
 import Footer from '../components/footer';
+import { TitleSection } from '../components/title-section';
 
 export default function Articles({allPosts}){
-    console.log('all posts', allPosts);
+    const title = 'Articles';
+    const description = 'Looking for tips and tricks to help your business establish or grow its digital presence? Look no further! Browse our catalog of articles intended to help you bring the power of technology to your business';
+
     return (
         <>
             <Header />
-            <div className='bg-articles-headline py-10 text-white'>
-                <ContentContainer>
-                    <h1 className='text-2xl font-bold my-3'>Articles</h1>
-                    <p className='w-full lg:w-1/2'>Looking for tips and tricks to help your business establish or grow its digital presence? Look no further! Browse our catalog of articles intended to help you bring the power of technology to your business</p>
-                </ContentContainer>
-            </div>
+            <TitleSection title={title} description={description} />
             <ContentContainer className='py-20'>
                 <div>
                     <div className='flex flex-wrap justify-around gap-5'>
