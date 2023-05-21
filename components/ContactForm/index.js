@@ -61,9 +61,9 @@ export const ContactForm = () => {
           });
       };
     return (
-        <div className='w-full flex flex-col items-center'>
-            <h3>Get In Touch</h3>
-            <form className='flex flex-col p-3 max-w-sm w-full border-2 rounded' onSubmit={handleOnSubmit}>
+      <div className='flex justify-around py-5'>
+        <div className='flex-auto'>
+            <form className='border text-lg shadow-md flex flex-col gap-3 p-3 max-w-lg w-full rounded py-6' onSubmit={handleOnSubmit}>
                 <label htmlFor="email">Email (required)</label>
                 <input
                   className='border-2 rounded'
@@ -92,7 +92,7 @@ export const ContactForm = () => {
                   required
                   value={inputs.message}
                 />
-                <button type="submit" disabled={status.submitting}>
+                <button className='bg-ungard-blue text-white w-fit px-5 py-2 rounded' type="submit" disabled={status.submitting}>
                 {!status.submitting
                     ? !status.submitted
                     ? 'Submit'
@@ -105,5 +105,10 @@ export const ContactForm = () => {
             )}
             {!status.info.error && status.info.msg && <p>{status.info.msg}</p>}
         </div>
+        <div className='flex-auto max-w-lg'>
+            <h2 className='text-4xl font-bold pb-5'>Let us know how we can help.</h2>
+            <p className='text-lg leading-loose'>Whatever your business needs, we are here to help. Whether you are a large comapny that needs a a custom ecommerce solution or a small company that just needs a brochure site; we navigate the digital landscape for your business so you can focus on what matters most. Tell us how we can help!</p>
+        </div>
+      </div>
     )
 }
